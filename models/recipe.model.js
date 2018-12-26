@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const ingredientSchema = require('./Ingredient.js');
+const ingredientSchema = require('./ingredient.model.js');
 
 const recipeSchema = new mongoose.Schema({
     name:String ,
@@ -7,3 +7,5 @@ const recipeSchema = new mongoose.Schema({
     imagePath: String,
     ingredients : [ingredientSchema.schema]
 });
+
+module.exports = mongoose.model('Recipe',recipeSchema);
